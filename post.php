@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 session_start();
 include_once 'php/db_connect.php';
@@ -27,7 +28,7 @@ if (isset($_POST['comment'])) {
 
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if ($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                //echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
                 echo "File is not an image.";
@@ -41,8 +42,8 @@ if (isset($_POST['comment'])) {
 //}
 // Check file size
 //if ($_FILES["fileToUpload"]["size"] > 500000) {
-//    echo "Sorry, your file is too large.";
-//    $uploadOk = 0;
+  //  echo "Sorry, your file is too large.";
+   // $uploadOk = 0;
 //}
 // Allow certain file formats
             if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
@@ -102,7 +103,7 @@ if (isset($_POST['post'])) {
 
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if ($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+                //echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
                 echo "File is not an image.";
@@ -116,8 +117,8 @@ if (isset($_POST['post'])) {
 //}
 // Check file size
 //if ($_FILES["fileToUpload"]["size"] > 500000) {
-//    echo "Sorry, your file is too large.";
-//    $uploadOk = 0;
+  //  echo "Sorry, your file is too large.";
+    //$uploadOk = 0;
 //}
 // Allow certain file formats
             if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {

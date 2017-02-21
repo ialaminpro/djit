@@ -1,6 +1,6 @@
 <?php
 include_once 'psl-config.php';
- 
+ session_start();
 function sec_session_start() {
   
                   // exit();
@@ -53,7 +53,7 @@ function login($email, $password, $mysqli) {
         if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
- 
+
             if (checkbrute($user_id, $mysqli) == true) {
                 
                   
@@ -65,17 +65,12 @@ function login($email, $password, $mysqli) {
                 // Check if the password in the database matches
                 // the password the user submitted. We are using
                 // the password_verify function to avoid timing attacks.
-//                echo $password;
-//                echo '<br>';
-//                echo $db_password;
-//                echo '<br>';
-//              echo   strlen($db_password);
-//                echo '<br>';
-           //  echo   strlen($password);
-           // echo strcmp($password,$db_password);
+             
+          
+          // exit();
                // var_dump(password_verify($password, $db_password)); exit();
-               // if (password_verify($password, $db_password)) {
-                if (!strcmp($password,$db_password)) {
+               if (password_verify($password, $db_password)) {
+               // if (!strcmp($password,$db_password)) {
                     
                     //echo 'dfsdf'; exit();
                     // Password is correct!

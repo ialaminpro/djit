@@ -1,0 +1,2 @@
+[21-Feb-2017 12:14:00 America/Chicago] PHP Parse error:  syntax error, unexpected '/' in /home/thealamin/public_html/djit/php/functions.php on line 68
+[21-Feb-2017 12:17:47 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/thealamin/public_html/djit/php/functions.php:68) in /home/thealamin/public_html/djit/php/process_login.php on line 21

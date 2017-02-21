@@ -1,9 +1,9 @@
 <?php
 
-
+error_reporting(0);
 include_once 'db_connect.php';
 include_once 'psl-config.php';
- 
+ session_start();
 $error_msg = "";
  
 
@@ -91,9 +91,13 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
             }
+            $last_id = mysqli_insert_id($mysqli); 
+				session_start();
+$_SESSION['user_id'] = 	$last_id;
         }
        // exit();
-        header('Location: ./register_success.php');
+        header('Location: ./index.php');
+exit();
     }
 }
 
